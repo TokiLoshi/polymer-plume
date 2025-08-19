@@ -1,15 +1,27 @@
 ## TO DOs
 
-- [ ] Basic project set up
-- [ ] Deploy
-- [ ] Asset Sourcing
-- [ ] Set up basic scene
-- [ ] Add transmission / caustics
-- [ ] Add animations and raycasting
-- [ ] Add delay to add bottle
-- [ ] Add particle morphing effect
-- [ ] Add UI with informative layover
-- [ ] Add sound effects
-- [ ] Physics?
-- [ ] Optimization
-- [ ] Feedback and iterate
+### 19 Aug
+
+- [ ] Select models
+- [ ] Place models for environnment
+- [ ] Add caustics
+- [ ] Particles morphing shader tutorial
+
+### 20 Aug
+
+- [ ] Apply particles morphing to scene
+
+### 21 Aug
+
+- [ ] Add toggle to UI
+- Add informative UI
+
+### 22 Aug
+
+- [ ] Surface foam ripples maybe with some perlin noise
+- [ ] Review Lygia[wawa](https://wawasensei.dev/courses/react-three-fiber/lessons/water-shader#foam-effect)
+- [ ] Apply the shader to models
+- [ ] Adjust the graident
+- [ ] Add cat to toss in
+- [ ] Animation
+- [ ] Perf
