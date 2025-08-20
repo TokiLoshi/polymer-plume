@@ -2,6 +2,7 @@ import { useControls } from "leva";
 import { MeshTransmissionMaterial } from "@react-three/drei";
 
 import WaterBottle from "./components/Waterbottle";
+import Environment from "./Environment";
 
 export default function Experience() {
 	const {
@@ -73,6 +74,7 @@ export default function Experience() {
 	);
 	return (
 		<>
+			<Environment />
 			{/** Water bottle */}
 			<WaterBottle
 				position={[bottlePositionX, bottlePositionY, bottlePositionZ]}
