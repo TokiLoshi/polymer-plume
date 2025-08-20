@@ -3,8 +3,10 @@ import { MeshTransmissionMaterial } from "@react-three/drei";
 
 import WaterBottle from "./components/Waterbottle";
 import Environment from "./Environment";
+import Cat from "./components/Cat";
 
 export default function Experience() {
+	// Plastic bottle
 	const {
 		bottlePositionX,
 		bottlePositionY,
@@ -26,6 +28,31 @@ export default function Experience() {
 		},
 		{ collapsed: true }
 	);
+
+	// Cat
+	const {
+		catPositionX,
+		catPositionY,
+		catPositionZ,
+		catRotationX,
+		catRotationY,
+		catRotationZ,
+		catScale,
+	} = useControls(
+		"cat",
+		{
+			catPositionX: { value: 0, min: -10, max: 10, step: 0.01 },
+			catPositionY: { value: 0, min: -10, max: 10, step: 0.01 },
+			catPositionZ: { value: 0, min: -10, max: 10, step: 0.01 },
+			catRotationX: { value: 0, min: -10, max: 10, step: 0.01 },
+			catRotationY: { value: 0, min: -10, max: 10, step: 0.01 },
+			catRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
+			catScale: { value: 1, min: -10, max: 10, step: 0.01 },
+		},
+		{ collapsed: true }
+	);
+
+	// Tank
 	const {
 		tankPositionX,
 		tankPositionY,
@@ -40,7 +67,7 @@ export default function Experience() {
 		"tank scale",
 		{
 			tankPositionX: { value: 0, min: -10, max: 10, step: 0.01 },
-			tankPositionY: { value: 0, min: -10, max: 10, step: 0.01 },
+			tankPositionY: { value: 1.81, min: -10, max: 10, step: 0.01 },
 			tankPositionZ: { value: 0, min: -10, max: 10, step: 0.01 },
 			tankRotationX: { value: 0, min: -5, max: 5, step: 0.01 },
 			tankRotationY: { value: 0.6, min: -5, max: 5, step: 0.01 },
@@ -74,6 +101,13 @@ export default function Experience() {
 	);
 	return (
 		<>
+			{/** Cat */}
+			<Cat
+				position={[catPositionX, catPositionY, catPositionZ]}
+				rotation={[catRotationX, catRotationY, catRotationZ]}
+				scale={catScale}
+			/>
+			{/** Environment with all the water stuff */}
 			<Environment />
 			{/** Water bottle */}
 			<WaterBottle
