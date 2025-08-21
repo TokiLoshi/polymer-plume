@@ -6,15 +6,16 @@ Contemplative scene on microplastics with shaders
 
 ## Attributions
 
-Water Bottle by [Quaternius](https://poly.pizza/m/KpxDpidn1Z) via poly pizza
-Mandarin Fish by [Quaternius](https://poly.pizza/m/h6M5zlF5Yx) via poly pizza
-Cat by [Quaternius](https://poly.pizza/m/qKICY6xla2) via poly pizza
-Star Fish by [Quaternius](https://poly.pizza/m/6H-0K9IEr56) via poly pizza
-Nautilus shell by [Poly by Google](https://poly.pizza/m/bceVxKNzLaJ) via poly pizza
-Coral by Poly by Google [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/4KUXdtDdgHR)
-Shelf by jeremy [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/144BQsV4GdZ)
-Fiddle-leaf Plant by Poly by Google [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/2ag6_uuqsnb)
-House Plant by BlenderVoyage [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/wPqra4eWSX)
+- Water Bottle by [Quaternius](https://poly.pizza/m/KpxDpidn1Z) via poly.pizza
+- Mandarin Fish by [Quaternius](https://poly.pizza/m/h6M5zlF5Yx) via poly.pizza
+- Cat by [Quaternius](https://poly.pizza/m/qKICY6xla2) via poly.pizza
+- Star Fish by [Quaternius](https://poly.pizza/m/6H-0K9IEr56) via poly.pizza
+- Nautilus shell by [Poly by Google](https://poly.pizza/m/bceVxKNzLaJ) via poly.pizza
+- Coral by Poly by Google [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/4KUXdtDdgHR)
+- Shelf by jeremy [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/144BQsV4GdZ)
+- Fiddle-leaf Plant by Poly by Google [CC-BY](https://creativecommons.org/licenses/by/3.0/) via poly.pizz [Poly Pizza](https://poly.pizza/m/2ag6_uuqsnb)
+- House Plant by BlenderVoyage [CC-BY](https://creativecommons.org/licenses/by/3.0/) via [Poly Pizza](https://poly.pizza/m/wPqra4eWSX) via poly.pizza
+- Bookcase with Books by [Quaternius](https://poly.pizza/m/tACDGJ4CGW) via poly.pizza
 
 ## Resources
 

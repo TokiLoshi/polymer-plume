@@ -7,8 +7,32 @@ import { useControls } from "leva";
 import Shelf from "./components/Shelf";
 import Shell from "./components/Shell";
 import StarFish from "./components/StarFish";
+import Bookcase from "../components/Bookshelf";
 
 export default function Environment() {
+	// Bookcase
+	const {
+		bookPositionX,
+		bookPositionY,
+		bookPositionZ,
+		bookRotationX,
+		bookRotationY,
+		bookRotationZ,
+		bookScale,
+	} = useControls(
+		"book",
+		{
+			bookPositionX: { value: 0, min: -10, max: 10, step: 0.01 },
+			bookPositionY: { value: 1, min: -10, max: 10, step: 0.01 },
+			bookPositionZ: { value: 0, min: -10, max: 10, step: 0.01 },
+			bookRotationX: { value: 0, min: -10, max: 10, step: 0.01 },
+			bookRotationY: { value: 1, min: -10, max: 10, step: 0.01 },
+			bookRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
+			bookScale: { value: 1, min: -10, max: 10, step: 0.01 },
+		},
+		{ collapsed: true }
+	);
+
 	// Coral
 	const {
 		coralPositionX,
@@ -19,7 +43,7 @@ export default function Environment() {
 		coralRotationZ,
 		coralScale,
 	} = useControls(
-		"tank",
+		"coral",
 		{
 			coralPositionX: { value: 0, min: -10, max: 10, step: 0.01 },
 			coralPositionY: { value: 1, min: -10, max: 10, step: 0.01 },
@@ -27,7 +51,7 @@ export default function Environment() {
 			coralRotationX: { value: 0, min: -10, max: 10, step: 0.01 },
 			coralRotationY: { value: 1, min: -10, max: 10, step: 0.01 },
 			coralRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
-			coralScale: { value: 0, min: -10, max: 10, step: 0.01 },
+			coralScale: { value: 1, min: -10, max: 10, step: 0.01 },
 		},
 		{ collapsed: true }
 	);
@@ -47,8 +71,8 @@ export default function Environment() {
 			figgyPositionX: { value: -5.7, min: -10, max: 10, step: 0.01 },
 			figgyPositionY: { value: 0, min: -10, max: 10, step: 0.01 },
 			figgyPositionZ: { value: 0, min: -10, max: 10, step: 0.01 },
-			figgyRotationX: { value: -5.7, min: -10, max: 10, step: 0.01 },
-			figgyRotationY: { value: 0, min: -10, max: 10, step: 0.01 },
+			figgyRotationX: { value: 0, min: -10, max: 10, step: 0.01 },
+			figgyRotationY: { value: -5.7, min: -10, max: 10, step: 0.01 },
 			figgyRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
 			figgyScale: { value: 1, min: -10, max: 10, step: 0.01 },
 		},
@@ -102,27 +126,27 @@ export default function Environment() {
 	);
 
 	// Shelf
-	const {
-		shelfPositionX,
-		shelfPositionY,
-		shelfPositionZ,
-		shelfRotationX,
-		shelfRotationY,
-		shelfRotationZ,
-		shelfScale,
-	} = useControls(
-		"shelf",
-		{
-			shelfPositionX: { value: 2, min: -10, max: 10, step: 0.01 },
-			shelfPositionY: { value: 0, min: -10, max: 10, step: 0.01 },
-			shelfPositionZ: { value: 0, min: -10, max: 10, step: 0.01 },
-			shelfRotationX: { value: 0, min: -10, max: 10, step: 0.01 },
-			shelfRotationY: { value: 0, min: -10, max: 10, step: 0.01 },
-			shelfRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
-			shelfScale: { value: 1, min: -5, max: 5, step: 0.01 },
-		},
-		{ collapsed: true }
-	);
+	// const {
+	// 	shelfPositionX,
+	// 	shelfPositionY,
+	// 	shelfPositionZ,
+	// 	shelfRotationX,
+	// 	shelfRotationY,
+	// 	shelfRotationZ,
+	// 	shelfScale,
+	// } = useControls(
+	// 	"shelf",
+	// 	{
+	// 		shelfPositionX: { value: 2, min: -10, max: 10, step: 0.01 },
+	// 		shelfPositionY: { value: 3, min: -10, max: 10, step: 0.01 },
+	// 		shelfPositionZ: { value: 0, min: -10, max: 10, step: 0.01 },
+	// 		shelfRotationX: { value: 0, min: -10, max: 10, step: 0.01 },
+	// 		shelfRotationY: { value: 0, min: -10, max: 10, step: 0.01 },
+	// 		shelfRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
+	// 		shelfScale: { value: 0.42, min: -5, max: 5, step: 0.01 },
+	// 	},
+	// 	{ collapsed: true }
+	// );
 
 	// Shell
 	const {
@@ -159,19 +183,25 @@ export default function Environment() {
 	} = useControls(
 		"starFish",
 		{
-			starFishPositionX: { value: 2, min: -10, max: 10, step: 0.01 },
+			starFishPositionX: { value: -0.3, min: -10, max: 10, step: 0.01 },
 			starFishPositionY: { value: 0, min: -10, max: 10, step: 0.01 },
 			starFishPositionZ: { value: 0, min: -10, max: 10, step: 0.01 },
 			starFishRotationX: { value: 0, min: -10, max: 10, step: 0.01 },
-			starFishRotationY: { value: 0, min: -10, max: 10, step: 0.01 },
+			starFishRotationY: { value: 2.15, min: -10, max: 10, step: 0.01 },
 			starFishRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
-			starFishScale: { value: 1, min: -5, max: 5, step: 0.01 },
+			starFishScale: { value: 0.24, min: -5, max: 5, step: 0.01 },
 		},
 		{ collapsed: true }
 	);
 
 	return (
 		<>
+			{/** Bookshelf */}
+			<Bookcase
+				position={[bookPositionX, bookPositionY, bookPositionZ]}
+				rotation={[bookRotationX, bookRotationY, bookRotationZ]}
+				scale={bookScale}
+			/>
 			{/** Coral */}
 			<Coral
 				position={[coralPositionX, coralPositionY, coralPositionZ]}
@@ -198,11 +228,11 @@ export default function Environment() {
 			/>
 
 			{/** Shelf */}
-			<Shelf
+			{/* <Shelf
 				position={[shelfPositionX, shelfPositionY, shelfPositionZ]}
 				rotation={[shelfRotationX, shelfRotationY, shelfRotationZ]}
 				scale={shelfScale}
-			/>
+			/> */}
 			{/** Shell */}
 			<Shell
 				position={[shellPositionX, shellPositionY, shellPositionZ]}
