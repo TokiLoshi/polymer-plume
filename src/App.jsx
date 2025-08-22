@@ -13,7 +13,7 @@ function App() {
 				shadows
 				camera={{
 					fov: 75,
-					position: [5, 3, 8],
+					position: [5, 3, 10],
 				}}
 				style={{
 					background:
@@ -23,7 +23,7 @@ function App() {
 					tonemapping: ACESFilmicToneMapping,
 					antialias: true,
 				}}>
-				<ambientLight intensity={0.5} />
+				<ambientLight intensity={1.5} />
 				<directionalLight position={[10, 10, 5]} intensity={1} castShadow />
 				<directionalLight
 					position={[-5, 5, -5]}

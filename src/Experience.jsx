@@ -18,10 +18,10 @@ export default function Experience() {
 	} = useControls(
 		"water bottle",
 		{
-			bottlePositionX: { value: 0, min: -10, max: 10, step: 0.01 },
-			bottlePositionY: { value: 0, min: -10, max: 10, step: 0.01 },
-			bottlePositionZ: { value: 4, min: -10, max: 10, step: 0.01 },
-			bottleScale: { value: 1, min: 0.2, max: 5, step: 0.1 },
+			bottlePositionX: { value: 3.9, min: -10, max: 10, step: 0.01 },
+			bottlePositionY: { value: 5.13, min: -10, max: 10, step: 0.01 },
+			bottlePositionZ: { value: -0.4, min: -10, max: 10, step: 0.01 },
+			bottleScale: { value: 0.7, min: 0.2, max: 5, step: 0.1 },
 			bottleRotationX: { value: 0, min: -5, max: 5, step: 0.01 },
 			bottleRotationY: { value: 0, min: -5, max: 5, step: 0.01 },
 			bottleRotationZ: { value: 0, min: -5, max: 5, step: 0.01 },
@@ -41,13 +41,13 @@ export default function Experience() {
 	} = useControls(
 		"cat",
 		{
-			catPositionX: { value: 0, min: -10, max: 10, step: 0.01 },
-			catPositionY: { value: 0, min: -10, max: 10, step: 0.01 },
-			catPositionZ: { value: 0, min: -10, max: 10, step: 0.01 },
+			catPositionX: { value: 5.5, min: -10, max: 10, step: 0.01 },
+			catPositionY: { value: 5.04, min: -10, max: 10, step: 0.01 },
+			catPositionZ: { value: 0.22, min: -10, max: 10, step: 0.01 },
 			catRotationX: { value: 0, min: -10, max: 10, step: 0.01 },
-			catRotationY: { value: 0, min: -10, max: 10, step: 0.01 },
+			catRotationY: { value: -1.8, min: -10, max: 10, step: 0.01 },
 			catRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
-			catScale: { value: 1, min: -10, max: 10, step: 0.01 },
+			catScale: { value: 0.7, min: -10, max: 10, step: 0.01 },
 		},
 		{ collapsed: true }
 	);
