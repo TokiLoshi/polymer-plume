@@ -28,7 +28,7 @@ export default function Environment() {
 			bookRotationX: { value: 0, min: -10, max: 10, step: 0.01 },
 			bookRotationY: { value: 1, min: -10, max: 10, step: 0.01 },
 			bookRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
-			bookScale: { value: 1, min: -10, max: 10, step: 0.01 },
+			bookScale: { value: 1.7, min: -10, max: 10, step: 0.01 },
 		},
 		{ collapsed: true }
 	);
