@@ -1,5 +1,5 @@
 import { useControls } from "leva";
-import { MeshTransmissionMaterial } from "@react-three/drei";
+import { MeshTransmissionMaterial, Caustics } from "@react-three/drei";
 
 import WaterBottle from "./components/Waterbottle";
 import Environment from "./Environment";
@@ -91,14 +91,15 @@ export default function Experience() {
 		"glass material",
 		{
 			transmission: { value: 1, min: 0, max: 1, step: 0.01 },
-			thickness: { value: 0.2, min: 0, max: 5, step: 0.01 },
-			roughness: { value: 0, min: 0, max: 1, step: 0.01 },
-			chromaticAberration: { value: 0.03, min: 0, max: 1, step: 0.01 },
-			ior: { value: 1.5, min: 1, max: 2.3, step: 0.01 },
+			thickness: { value: 0.5, min: 0, max: 5, step: 0.01 },
+			roughness: { value: 0.02, min: 0, max: 1, step: 0.01 },
+			chromaticAberration: { value: 0.1, min: 0, max: 1, step: 0.01 },
+			ior: { value: 1.52, min: 1, max: 2.3, step: 0.01 },
 			backside: { value: true },
 		},
 		{ collapsed: true }
 	);
+
 	return (
 		<>
 			{/** Cat */}
@@ -128,9 +129,10 @@ export default function Experience() {
 					chromaticAbberation={chromaticAbberation}
 					ior={ior}
 					backside={backside}
-					color='#ffffff'
+					color='#90D5FF'
 				/>
 			</mesh>
+
 			{/** Floor */}
 			<mesh position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
 				<planeGeometry args={[20, 20]} />

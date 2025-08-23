@@ -45,13 +45,13 @@ export default function Environment() {
 	} = useControls(
 		"coral",
 		{
-			coralPositionX: { value: 0, min: -10, max: 10, step: 0.01 },
+			coralPositionX: { value: 1.2, min: -10, max: 10, step: 0.01 },
 			coralPositionY: { value: 1, min: -10, max: 10, step: 0.01 },
-			coralPositionZ: { value: 0, min: -10, max: 10, step: 0.01 },
+			coralPositionZ: { value: -0.6, min: -10, max: 10, step: 0.01 },
 			coralRotationX: { value: 0, min: -10, max: 10, step: 0.01 },
 			coralRotationY: { value: 1, min: -10, max: 10, step: 0.01 },
 			coralRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
-			coralScale: { value: 1, min: -10, max: 10, step: 0.01 },
+			coralScale: { value: 1.6, min: -10, max: 10, step: 0.01 },
 		},
 		{ collapsed: true }
 	);
@@ -91,39 +91,39 @@ export default function Environment() {
 	} = useControls(
 		"fish",
 		{
-			fishPositionX: { value: 2, min: -10, max: 10, step: 0.01 },
-			fishPositionY: { value: 0, min: -10, max: 10, step: 0.01 },
-			fishPositionZ: { value: 0, min: -10, max: 10, step: 0.01 },
-			fishRotationX: { value: 0, min: -10, max: 10, step: 0.01 },
-			fishRotationY: { value: 0, min: -10, max: 10, step: 0.01 },
-			fishRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
-			fishScale: { value: 1, min: -5, max: 5, step: 0.01 },
+			fishPositionX: { value: -0.4, min: -10, max: 10, step: 0.01 },
+			fishPositionY: { value: 3.14, min: -10, max: 10, step: 0.01 },
+			fishPositionZ: { value: 1.07, min: -10, max: 10, step: 0.01 },
+			fishRotationX: { value: 0.4, min: -10, max: 10, step: 0.01 },
+			fishRotationY: { value: 2.15, min: -10, max: 10, step: 0.01 },
+			fishRotationZ: { value: -6.4, min: -10, max: 10, step: 0.01 },
+			fishScale: { value: 0.3, min: -5, max: 5, step: 0.01 },
 		},
 		{ collapsed: true }
 	);
 
 	// House plant
-	const {
-		plantPositionX,
-		plantPositionY,
-		plantPositionZ,
-		plantRotationX,
-		plantRotationY,
-		plantRotationZ,
-		plantScale,
-	} = useControls(
-		"plant",
-		{
-			plantPositionX: { value: 2, min: -10, max: 10, step: 0.01 },
-			plantPositionY: { value: 0, min: -10, max: 10, step: 0.01 },
-			plantPositionZ: { value: 0, min: -10, max: 10, step: 0.01 },
-			plantRotationX: { value: 0, min: -10, max: 10, step: 0.01 },
-			plantRotationY: { value: 0, min: -10, max: 10, step: 0.01 },
-			plantRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
-			plantScale: { value: 1, min: -5, max: 5, step: 0.01 },
-		},
-		{ collapsed: true }
-	);
+	// const {
+	// 	plantPositionX,
+	// 	plantPositionY,
+	// 	plantPositionZ,
+	// 	plantRotationX,
+	// 	plantRotationY,
+	// 	plantRotationZ,
+	// 	plantScale,
+	// } = useControls(
+	// 	"plant",
+	// 	{
+	// 		plantPositionX: { value: 2, min: -10, max: 10, step: 0.01 },
+	// 		plantPositionY: { value: 0, min: -10, max: 10, step: 0.01 },
+	// 		plantPositionZ: { value: 0, min: -10, max: 10, step: 0.01 },
+	// 		plantRotationX: { value: 0, min: -10, max: 10, step: 0.01 },
+	// 		plantRotationY: { value: 0, min: -10, max: 10, step: 0.01 },
+	// 		plantRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
+	// 		plantScale: { value: 1, min: -5, max: 5, step: 0.01 },
+	// 	},
+	// 	{ collapsed: true }
+	// );
 
 	// Shelf
 	// const {
@@ -149,27 +149,27 @@ export default function Environment() {
 	// );
 
 	// Shell
-	const {
-		shellPositionX,
-		shellPositionY,
-		shellPositionZ,
-		shellRotationX,
-		shellRotationY,
-		shellRotationZ,
-		shellScale,
-	} = useControls(
-		"shell",
-		{
-			shellPositionX: { value: 2, min: -10, max: 10, step: 0.01 },
-			shellPositionY: { value: 0, min: -10, max: 10, step: 0.01 },
-			shellPositionZ: { value: 0, min: -10, max: 10, step: 0.01 },
-			shellRotationX: { value: 0, min: -10, max: 10, step: 0.01 },
-			shellRotationY: { value: 0, min: -10, max: 10, step: 0.01 },
-			shellRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
-			shellScale: { value: 1, min: -5, max: 5, step: 0.01 },
-		},
-		{ collapsed: true }
-	);
+	// const {
+	// 	shellPositionX,
+	// 	shellPositionY,
+	// 	shellPositionZ,
+	// 	shellRotationX,
+	// 	shellRotationY,
+	// 	shellRotationZ,
+	// 	shellScale,
+	// } = useControls(
+	// 	"shell",
+	// 	{
+	// 		shellPositionX: { value: 2, min: -10, max: 10, step: 0.01 },
+	// 		shellPositionY: { value: 0, min: -10, max: 10, step: 0.01 },
+	// 		shellPositionZ: { value: 0, min: -10, max: 10, step: 0.01 },
+	// 		shellRotationX: { value: 0, min: -10, max: 10, step: 0.01 },
+	// 		shellRotationY: { value: 0, min: -10, max: 10, step: 0.01 },
+	// 		shellRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
+	// 		shellScale: { value: 1, min: -5, max: 5, step: 0.01 },
+	// 	},
+	// 	{ collapsed: true }
+	// );
 
 	// Starfish
 	const {
@@ -215,11 +215,11 @@ export default function Environment() {
 				scale={figgyScale}
 			/>
 			{/** House Plant */}
-			<HousePlant
+			{/* <HousePlant
 				position={[plantPositionX, plantPositionY, plantPositionZ]}
 				rotation={[plantRotationX, plantRotationY, plantRotationZ]}
 				scale={plantScale}
-			/>
+			/> */}
 			{/** Fish */}
 			<MandarinFish
 				position={[fishPositionX, fishPositionY, fishPositionZ]}
@@ -234,11 +234,11 @@ export default function Environment() {
 				scale={shelfScale}
 			/> */}
 			{/** Shell */}
-			<Shell
+			{/* <Shell
 				position={[shellPositionX, shellPositionY, shellPositionZ]}
 				rotation={[shellRotationX, shellRotationY, shellRotationZ]}
 				scale={shellScale}
-			/>
+			/> */}
 			{/** Starfish */}
 			<StarFish
 				position={[starFishPositionX, starFishPositionY, starFishPositionZ]}
