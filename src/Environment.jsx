@@ -8,6 +8,7 @@ import Shelf from "./components/Shelf";
 import Shell from "./components/Shell";
 import StarFish from "./components/StarFish";
 import Bookcase from "../components/Bookshelf";
+import ParticleMorpher from "./components/ParticleMorpher";
 
 export default function Environment() {
 	// Bookcase
@@ -196,6 +197,7 @@ export default function Environment() {
 
 	return (
 		<>
+			<ParticleMorpher />
 			{/** Bookshelf */}
 			<Bookcase
 				position={[bookPositionX, bookPositionY, bookPositionZ]}
