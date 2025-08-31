@@ -1,5 +1,5 @@
 import { useGLTF } from "@react-three/drei";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useThree } from "@react-three/fiber";
 import vertexShader from "../shaders/vertex.glsl";
 import fragmentShader from "../shaders/fragment.glsl";
@@ -13,13 +13,24 @@ export default function ParticleMorpher() {
 	const materialRef = useRef();
 	const geometryRef = useRef();
 	const [currentIndex, setCurrentIndex] = useState(0);
-	const [targetProgress, setTargetProgress] = useState(0);
+	const [targetIndex, setTargetIndex] = useState(0);
 
+	// const { progress } = useSpring({
+	// 	progress: targetProgress,
+	// 	config: { duration: 3000 },
+	// 	onChange: (result) => {
+	// 		console.log("Spring progress:", result.value.progress);
+	// 	},
+	// });
 	const { progress } = useSpring({
-		progress: targetProgress,
+		from: { progress: 0 },
+		to: { progress: targetIndex === currentIndex ? 1 : 0 },
+		reset: targetIndex !== currentIndex,
 		config: { duration: 3000 },
-		onChange: (result) => {
-			console.log("Spring progress:", result.value.progress);
+		onRest: () => {
+			if (targetIndex !== currentIndex) {
+				setCurrentIndex(targetIndex);
+			}
 		},
 	});
 
@@ -64,17 +75,23 @@ export default function ParticleMorpher() {
 		return { processedPositions, maxCount, sizesArray };
 	}, [gltf]);
 
-	const morph = (targetIndex) => {
-		console.log(`Morphing to: ${targetIndex}, current: ${currentIndex}`);
-		if (!geometryRef.current || targetIndex === currentIndex) return;
+	useEffect(() => {
+		if (!geometryRef.current) return;
+
+		geometryRef.current.attributes.position.array =
+			particleData.processedPositions[targetIndex];
+		geometryRef.current.attributes.position.needsUpdate = true;
 
 		geometryRef.current.attributes.aPositionTarget.array =
 			particleData.processedPositions[targetIndex];
 		geometryRef.current.attributes.aPositionTarget.needsUpdate = true;
+	}, [currentIndex, targetIndex, particleData]);
 
-		setTargetProgress(0);
-		setTimeout(() => setTargetProgress(1), 50);
-		setCurrentIndex(targetIndex);
+	const morph = (newTargetIndex) => {
+		console.log(`Morphing to: ${targetIndex}, current: ${currentIndex}`);
+		if (newTargetIndex === currentIndex) return;
+
+		setTargetIndex(newTargetIndex);
 	};
 
 	// Leva controls
@@ -124,7 +141,7 @@ export default function ParticleMorpher() {
 								size.height * window.devicePixelRatio,
 							],
 						},
-						uProgress: progress,
+						uProgress: { value: progress },
 					}}
 					// Additive Blending
 					blending={2}
