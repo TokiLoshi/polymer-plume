@@ -3,11 +3,25 @@ import { useMemo, useState } from "react";
 import { useThree } from "@react-three/fiber";
 import vertexShader from "../shaders/vertex.glsl";
 import fragmentShader from "../shaders/fragment.glsl";
+import { useSpring, animated } from "@react-spring/three";
+import { useRef } from "react";
+import { useControls, button } from "leva";
 
 export default function ParticleMorpher() {
 	const gltf = useGLTF("models/particles.glb");
 	const { size } = useThree();
-	const [progress, setProgress] = useState(0);
+	const materialRef = useRef();
+	const geometryRef = useRef();
+	const [currentIndex, setCurrentIndex] = useState(0);
+	const [targetProgress, setTargetProgress] = useState(0);
+
+	const { progress } = useSpring({
+		progress: targetProgress,
+		config: { duration: 3000 },
+		onChange: (result) => {
+			console.log("Spring progress:", result.value.progress);
+		},
+	});
 
 	const particleData = useMemo(() => {
 		const positions = gltf.scene.children.map(
@@ -49,10 +63,32 @@ export default function ParticleMorpher() {
 
 		return { processedPositions, maxCount, sizesArray };
 	}, [gltf]);
+
+	const morph = (targetIndex) => {
+		console.log(`Morphing to: ${targetIndex}, current: ${currentIndex}`);
+		if (!geometryRef.current || targetIndex === currentIndex) return;
+
+		geometryRef.current.attributes.aPositionTarget.array =
+			particleData.processedPositions[targetIndex];
+		geometryRef.current.attributes.aPositionTarget.needsUpdate = true;
+
+		setTargetProgress(0);
+		setTimeout(() => setTargetProgress(1), 50);
+		setCurrentIndex(targetIndex);
+	};
+
+	// Leva controls
+	useControls("ParticleMorpher", {
+		"Shape 0": button(() => morph(0)),
+		"Shape 1": button(() => morph(1)),
+		"Shape 2": button(() => morph(2)),
+		"Shape 3": button(() => morph(3)),
+	});
+
 	return (
 		<>
-			<points>
-				<bufferGeometry>
+			<points frustumCulled={false}>
+				<bufferGeometry ref={geometryRef}>
 					<bufferAttribute
 						attach='attributes-position'
 						count={particleData.maxCount}
@@ -74,7 +110,8 @@ export default function ParticleMorpher() {
 				</bufferGeometry>
 
 				{/** Shader */}
-				<shaderMaterial
+				<animated.shaderMaterial
+					ref={materialRef}
 					vertexShader={vertexShader}
 					fragmentShader={fragmentShader}
 					uniforms={{
@@ -87,10 +124,10 @@ export default function ParticleMorpher() {
 								size.height * window.devicePixelRatio,
 							],
 						},
-						uProgress: { value: progress },
+						uProgress: progress,
 					}}
 					// Additive Blending
-					blending={1}
+					blending={2}
 					depthWrite={false}
 				/>
 			</points>

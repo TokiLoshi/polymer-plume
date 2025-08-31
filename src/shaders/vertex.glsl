@@ -13,6 +13,7 @@ varying vec3 vColor;
 
 void main() {
   // Mixed position 
+
   float noiseOrigin = simplexNoise3d(position * 0.2); 
   float noiseTarget = simplexNoise3d(aPositionTarget * 0.2); 
   float noise = mix(noiseOrigin, noiseTarget, uProgress); 
@@ -39,3 +40,4 @@ void main() {
   vColor = mix(uColorA, uColorB, noise); 
 
 }
+
