@@ -18,7 +18,6 @@ export default function MandarinFish(props) {
 	const group = useRef();
 	const { nodes, materials, animations } = useGLTF("models/MandarinFish.glb");
 	const { actions } = useAnimations(animations, group);
-	console.log("Fish Actions: ", actions);
 
 	useEffect(() => {
 		const swimmingAction = actions[ACTION_MAP.swimmingNormal];

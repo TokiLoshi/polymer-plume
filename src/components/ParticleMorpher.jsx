@@ -6,6 +6,7 @@ import fragmentShader from "../shaders/fragment.glsl";
 import { useSpring, animated } from "@react-spring/three";
 import { useRef } from "react";
 import { useControls, button } from "leva";
+import * as THREE from "three";
 
 export default function ParticleMorpher() {
 	const gltf = useGLTF("models/particles.glb");
@@ -15,24 +16,24 @@ export default function ParticleMorpher() {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [targetIndex, setTargetIndex] = useState(0);
 
+	const { progress } = useSpring({
+		progress: 1,
+		from: { progress: 0 },
+		reset: true,
+		config: { duration: 3000 },
+	});
+
 	// const { progress } = useSpring({
-	// 	progress: targetProgress,
+	// 	from: { progress: 0 },
+	// 	to: { progress: targetIndex === currentIndex ? 1 : 0 },
+	// 	reset: targetIndex !== currentIndex,
 	// 	config: { duration: 3000 },
-	// 	onChange: (result) => {
-	// 		console.log("Spring progress:", result.value.progress);
+	// 	onRest: () => {
+	// 		if (targetIndex !== currentIndex) {
+	// 			setCurrentIndex(targetIndex);
+	// 		}
 	// 	},
 	// });
-	const { progress } = useSpring({
-		from: { progress: 0 },
-		to: { progress: targetIndex === currentIndex ? 1 : 0 },
-		reset: targetIndex !== currentIndex,
-		config: { duration: 3000 },
-		onRest: () => {
-			if (targetIndex !== currentIndex) {
-				setCurrentIndex(targetIndex);
-			}
-		},
-	});
 
 	const particleData = useMemo(() => {
 		const positions = gltf.scene.children.map(

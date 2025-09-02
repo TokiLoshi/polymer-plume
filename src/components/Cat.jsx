@@ -19,9 +19,7 @@ const ACTION_MAP = {
 export default function Cat(props) {
 	const group = useRef();
 	const { nodes, materials, animations } = useGLTF("models/Cat.glb");
-	const { actions, names } = useAnimations(animations, group);
-	console.log("Cat Actions: ", actions);
-	console.log("Names: ", names);
+	const { actions } = useAnimations(animations, group);
 
 	useEffect(() => {
 		const walkAction = actions[ACTION_MAP.walk];
